@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Controller;
-use App\Entity\Tournoi;
-use App\Repository\TournoiRepository;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
-
 
 class IndexController extends AbstractController
 {
@@ -63,8 +60,12 @@ class IndexController extends AbstractController
         return $this->render('review.html.twig');
     }
 
-
-    
-
+     /**
+     * @Route("/inscri", name="inscri")
+     */
+    public function inscri(): Response
+    {
+        return $this->render('inscri.html.twig');
+    }
 
 }

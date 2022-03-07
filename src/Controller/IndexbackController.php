@@ -74,5 +74,4 @@ class IndexbackController extends AbstractController
         return $this->render('profile.html.twig');
     }
 
-
 }

@@ -20,49 +20,23 @@
 					<div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="comments">
-       
-       
-       
-        <div class="comment-box">
-		 {% for post in posts %}
-          <span class="commenter-pic">
-            <img src="/images/user-icon.jpg" class="img-fluid">
-          </span>
+                  
+                   
+  <div class="comment-box add-comment">
+          
           <span class="commenter-name">
-            <a href="#">{{post.user}}</a> <span class="comment-time">{{post.createdAt}}</span>
-          </span>       
-          <p class="comment-txt more">{{post.content}}</p>
-		   <p class="comment-txt more">{{post.image}}</p>
-          <div class="comment-meta">
-            <button class="comment-like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> </button>
-            <button class="comment-dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> </button> 
-            <button class="comment-reply"><i class="fa fa-reply-all" aria-hidden="true"></i> Comment</button>         
-          </div>
-          <div class="comment-box replied">
-		 {% for comm in comms %}
-            <span class="commenter-pic">
-              <img src="/images/user-icon.jpg" class="img-fluid">
-            </span>
-            <span class="commenter-name">
-              <a href="#">{{comm.user}}</a> <span class="comment-time">{{comm.createdAt}}</span>
-            </span>       
-            <p class="comment-txt more">{{comm.content}}</p>
-			<p class="comment-txt more">{{comm.image}}</p>
-            <div class="comment-meta">
-              <button class="comment-like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
-              <button class="comment-dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>        
-            </div>
-           {% endfor %}
-          </div>
+		    {{ form_start(form)}}
+                        	{{ form_widget(form)}}
+            <button type="submit" class="btn btn-default">Comment</button>
+            <button type="cancel" class="btn btn-default">Cancel</button>
+			  {{ form_end(form)}}
+          </span>
         </div>
-      </div>
-	   {% endfor %}
-    </div>
-  </div>
 </div>
-</div>
-
+			</div>	
+			</div>	
+					
+				</div>
 				<div class="col-xl-3 col-lg-4 col-md-5 sidebar">
 					<div id="stickySidebar">
 						<div class="widget-item">
@@ -97,7 +71,6 @@
 							</div>
 						</div>
 						
-
 						<div class="widget-item">
 							<h4 class="widget-title">Latest Comments</h4>
 							<div class="latest-comments">
@@ -120,7 +93,6 @@
 							</div>
 						</div>
 						
-
 					</div>
 				</div>
 			</div>
@@ -139,4 +111,3 @@ $(document).ready(function(){
 	
 	</body>
     {% endblock %}
-
