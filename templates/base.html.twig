@@ -10,6 +10,7 @@
 	<!-- Favicon -->
 	<link href="img/logo.png" rel="shortcut icon"/>
 
+
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
@@ -34,6 +35,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.1.0/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.js"></script>
+
 {% endblock %}
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="css/style.css"/>
@@ -48,6 +50,7 @@
 	<section class="hero-section overflow-hidden">
 		<div class="hero-slider owl-carousel">
 			<div class="hero-item set-bg d-flex align-items-center justify-content-center text-center" data-setbg="img/slider-bg-2.jpg">
+
 				<div class="container">
 					<h2>CLUTCHERS</h2>
 					<p>Un site web de documentation sur les jeux vidéos et l'e-sports.</p>
@@ -246,10 +249,12 @@
 		<div class="header-warp">
 			<div class="header-social d-flex justify-content-end">
 				<p>Suivez Nous</p>
+
 				<a href="#"><i class="fa fa-pinterest"></i></a>
 				<a href="#"><i class="fa fa-facebook"></i></a>
 				<a href="#"><i class="fa fa-twitter"></i></a>
 				<a href="#"><i class="fa fa-dribbble"></i></a>
+
 			</div>
 			<div class="header-bar-warp d-flex">
 				<!-- site logo -->
@@ -259,11 +264,13 @@
 				<nav class="top-nav-area w-100">
 					<div class="user-panel">
 						<a href="">Login</a> / <a href="">S'inscrire</a> / <a href="{{ path('indexback')}}">BACKOFFICE</a>
+
 					</div>
 					<!-- Menu -->
 					<ul class="main-menu primary-menu">
 						<li><a href="{{ path ('games') }}">Actualités</a></li>
 						<li><a href="{{ path ('games') }}">Jeux</a>
+
 							<ul class="sub-menu">
 								<li><a href="{{ path ('game-single') }}">Jeux Solo</a></li>
 							</ul>
@@ -271,6 +278,7 @@
 						<li><a href="{{ path ('review') }}">Tournoi</a></li>
 						<li><a href="{{ path ('blogg') }}">Forum</a></li>
 						<li><a href="{{ path ('add_inscri') }}">S'inscrire au tournoi</a></li>
+
 					</ul>
 				</nav>
 			</div>
@@ -301,6 +309,7 @@
 			
 			<a href="#" class="footer-logo">
 				<img src="./img/logo1png.png" alt="">
+
 			</a>
 			<ul class="main-menu footer-menu">
 				<li><a href="{{ path ('games') }}">Actualités</a></li>
@@ -308,6 +317,7 @@
 				<li><a href="{{ path ('review') }}">Tournoi</a></li>
 				<li><a href="{{ path ('blogg') }}">Forum</a></li>
 				<li><a href="{{ path ('add_inscri') }}">S'inscrire au tournoi</a></li>
+
 			</ul>
 			<div class="footer-social d-flex justify-content-center">
 				<a href="#"><i class="fa fa-pinterest"></i></a>
@@ -336,3 +346,4 @@
 	</body>
 	
 </html>
+
