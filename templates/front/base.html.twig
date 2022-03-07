@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+
+		<title>
+			Home
+		</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="EndGam Gaming Magazine Template">
+		<meta name="keywords" content="endGam,gGaming, magazine, html">
+		<meta
+		name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Favicon -->
+		<link
+		href="img/favicon.ico" rel="shortcut icon"/>
+
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+		{% block css %}
+			<!-- Stylesheets -->
+			<link rel="stylesheet" href="{{ asset ('css/bootstrap.min.css')}}"/>
+			<link rel="stylesheet" href="{{ asset ('css/font-awesome.min.css')}}"/>
+			<link rel="stylesheet" href="{{ asset ('css/slicknav.min.css')}}"/>
+			<link rel="stylesheet" href="{{ asset ('css/owl.carousel.min.css')}}"/>
+			<link rel="stylesheet" href="{{ asset ('css/magnific-popup.css')}}"/>
+			<link rel="stylesheet" href="{{ asset ('css/animate.css')}}"/>
+
+		{% endblock %}
+		<!-- Main Stylesheets -->
+		<link
+		rel="stylesheet" href="css/style.css"/>
+
+
+	<!--[if lt IE 9]>
+																																																																																											  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+																																																																																										  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+																																																																																										<![endif]-->
+
+	</head>
+	{% block body %}
+		<!-- Page Preloder -->
+		<div id="preloder">
+			<div class="loader"></div>
+		</div>
+		{% block header %}
+			<!-- Header section -->
+			<header class="header-section">
+
+				<div class="header-warp">
+					<div class="header-social d-flex justify-content-end">
+						<p>Follow us:</p>
+						<a href="#">
+							<i class="fa fa-pinterest"></i>
+						</a>
+						<a href="#">
+							<i class="fa fa-facebook"></i>
+						</a>
+						<a href="#">
+							<i class="fa fa-twitter"></i>
+						</a>
+						<a href="#">
+							<i class="fa fa-dribbble"></i>
+						</a>
+						<a href="#">
+							<i class="fa fa-behance"></i>
+						</a>
+					</div>
+					<div
+						class="header-bar-warp d-flex">
+						<!-- site logo -->
+						<a href="{{ path('homepage')}} " class="site-logo navbar-brand">
+							<img src="./img/logo.png" alt="">
+						</a>
+						<!--Navbar -->
+						<!--Navbar -->
+						<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+							<a class="navbar-brand" href="#">Navbar</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+								<ul class="navbar-nav mr-auto">
+									<li class="nav-item active">
+										<a class="nav-link" href="#">Home
+											<span class="sr-only">(current)</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Features</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Pricing</a>
+									</li>
+									{% if app.user %}
+										<li class="nav-item dropdown">
+											<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile
+											</a>
+											<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+												<a class="dropdown-item" href="{{path('account_index')}}">Mon Compte</a>
+												<a class="dropdown-item" href="{{path('account_profile')}}">Modifier Mon compte</a>
+
+												<div class="dropdown-divider"></div>
+												<a class=" dropdown-item" href=" {{path('account_logout')}} ">Disconnect</a>
+											</div>
+										</li>
+
+									{% else %}
+
+										<li class="nav-item">
+											<a href="{{ path ('account_register')}}" class="nav-link">Sign-up</a>
+										</li>
+
+										<li class="nav-item">
+											<a href="{{ path ('account_login')}}" class="nav-link">Sign-in</a>
+										</li>
+
+									{% endif %}
+
+
+								</ul>
+
+
+							</div>
+						</nav>
+						<!--/.Navbar -->
+						<!--/.Navbar -->
+					</div>
+				</div>
+
+			</header>
+
+
+			<!-- Header section end -->
+
+		{% endblock %}
+
+
+		{% block newsletter %}
+			<!-- Newsletter section -->
+			<section class="newsletter-section">
+				<div class="container">
+					<h2>Subscribe to our newsletter</h2>
+					<form class="newsletter-form">
+						<input type="text" placeholder="ENTER YOUR E-MAIL">
+						<button class="site-btn">subscribe
+							<img src="img/icons/double-arrow.png" alt="#"/></button>
+					</form>
+				</div>
+			</section>
+			<!-- Newsletter section end -->
+		{% endblock %}
+	{% endblock %}
+	{% block footer %}
+		<!-- Footer section -->
+		<footer class="footer-section">
+			<div class="container">
+
+				<a href="#" class="footer-logo">
+					<img src="./img/logo.png" alt="">
+				</a>
+				<ul class="main-menu footer-menu">
+					<li>
+						<a href="">Home</a>
+					</li>
+					<li>
+						<a href="">Games</a>
+					</li>
+					<li>
+						<a href="">Reviews</a>
+					</li>
+					<li>
+						<a href="">News</a>
+					</li>
+					<li>
+						<a href="">Contact</a>
+					</li>
+				</ul>
+				<div class="footer-social d-flex justify-content-center">
+					<a href="#">
+						<i class="fa fa-pinterest"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-facebook"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-dribbble"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-behance"></i>
+					</a>
+				</div>
+				<div class="copyright">
+					<a href="">Colorlib</a>
+					2018 @ All rights reserved</div>
+			</div>
+		</footer>
+		<!-- Footer section end -->
+	{% endblock %}
+	{% block js %}
+		<!--====== Javascripts & Jquery ======-->
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.slicknav.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.sticky-sidebar.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/main.js"></script>
+	{% endblock %}
+</html>
