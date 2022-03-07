@@ -1,0 +1,74 @@
+
+  
+{% block body %}
+<body class="g-sidenav-show  bg-gray-200">
+ 
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text-capitalize ps-3">Commande Table</h6>
+               
+              </div>
+              
+            </div>
+            <div class="card-body px-0 pb-2">
+             
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Produit</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Totales</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  opacity-7 ps-2">Mail</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  opacity-7 ps-2">Adresse</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  opacity-7 ps-2">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for commande in commandes %}
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                       
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{commande.produit}}</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                       <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{commande.totales}}</h6>
+                      </td>
+                       <td>
+                       <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{commande.date.format('d/m/Y')}}</h6>
+                      </td>
+                       <td>
+                       <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{commande.mail}}</h6>
+                      </td>
+                       <td>
+                       <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{commande.adresse}}</h6>
+                      </td>
+                      
+
+                       
+                    </tr>
+                    {% endfor %}
+                   
+                  </tbody>
+                </table>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      
+</body>
+{% endblock %}

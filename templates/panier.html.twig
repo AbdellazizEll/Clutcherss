@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %} Panier  {% endblock %}
+{% block body %}
+<div class="shopping-cart">
+            <!-- Title -->
+            <div class="title">
+                Shopping Bag
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h3>ORDER CHECKOUT</h3>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <div id="paypal-button-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/paypal.js"></script>
+        <script src="js/cart_buttons.js"></script>
+        <script src="js/cart.js"></script>
+         {% endblock %}
