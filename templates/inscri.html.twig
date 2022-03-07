@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %} Inscription {% endblock %}
+{% block body %}
+<section class="contact-page">
+<div class="row">
+<div class="col-lg-7 order-2 order-lg-1 text-white">
+
+<center>
+<h3> Formulaire d'inscription</h3>
+<br>
+
+{{ form_start(form)}}
+<form class="contact-form">
+	{{ form_widget(form)}}
+
+<button type="submit">S'inscrire</button>
+</form>
+{{ form_end(form)}}
+
+</center>
+</div>
+<div class="col-lg-4 order-1 order-lg-2 contact-text text-white">
+
+	<h2>Today's Date</h2>
+  <br>
+					<center>
+					 <div id="calendar-holder"></div>
+           </center>
+	</div>
+				
+			</div>
+		</div>
+        </section>
+
+{% endblock %}
