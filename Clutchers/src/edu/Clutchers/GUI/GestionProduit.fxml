@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="506.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.Clutchers.GUI.GestionProduitController">
+   <children>
+      <TabPane layoutY="43.0" prefHeight="463.0" prefWidth="874.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Gestion Produit">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="900.0">
+                     <children>
+                        <ImageView cache="true" fitHeight="490.0" fitWidth="889.0" layoutX="1.0" opacity="0.69" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Desktop/f7028cb334c179e9_6076e3a0de21d62fdf52aff6.jpg" />
+                           </image>
+                        </ImageView>
+                        <ComboBox fx:id="CBCat" layoutX="694.0" layoutY="21.0" prefWidth="150.0" />
+                        <TableView id="Reclamation" fx:id="tvProduit" layoutX="258.0" layoutY="57.0" onMouseClicked="#affInInputsProd" prefHeight="320.0" prefWidth="586.0">
+                           <columns>
+                              <TableColumn fx:id="tcIdprod" prefWidth="57.0" text="ID" />
+                              <TableColumn fx:id="tcNomprod" prefWidth="91.0" text="NomProduit" />
+                              <TableColumn fx:id="tcImageprod" prefWidth="72.0" text="Image" />
+                              <TableColumn fx:id="tcPrixprod" prefWidth="61.0" text="Prix" />
+                              <TableColumn fx:id="tcDescprod" prefWidth="212.0" text="Description" />
+                              <TableColumn fx:id="tcQteprod" prefWidth="91.0" text="Quantité" />
+                              <TableColumn fx:id="tcCatidprod" minWidth="0.0" prefWidth="0.0" text="CatID" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="25.0" layoutY="25.0" text="Gestion Produit">
+                           <font>
+                              <Font name="Arial Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="14.0" layoutY="67.0" prefHeight="235.0" prefWidth="100.0" spacing="26.0">
+                           <children>
+                              <Label text="CatID" />
+                              <Label text="Id produit" />
+                              <Label text="Nom Produit" />
+                              <Label text="Image" />
+                              <Label text="Prix" />
+                              <Label text="Description " />
+                              <Label text="Quantité" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="94.0" layoutY="66.0" prefHeight="222.0" prefWidth="129.0" spacing="17.0">
+                           <children>
+                              <TextField fx:id="tfCatidprod" accessibleRole="COMBO_BOX" promptText="CatId" />
+                              <TextField fx:id="tfIdp" editable="false" promptText="id produit" />
+                              <TextField fx:id="tfNomp" promptText="Nom produit" />
+                              <TextField fx:id="tfImagep" promptText="Image" />
+                              <TextField fx:id="tfPrixp" promptText="Prix" />
+                              <TextField fx:id="tfDescp" promptText="Decription" />
+                              <TextField fx:id="tfQtep" promptText="Quntité" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnInsertprod" layoutX="25.0" layoutY="365.0" mnemonicParsing="false" onAction="#ajouterProd" text="Insert" />
+                        <Button fx:id="btnUpdateprod" layoutX="87.0" layoutY="365.0" mnemonicParsing="false" onAction="#modifierProd" text="Update" />
+                        <Button fx:id="btnDelteprod" layoutX="159.0" layoutY="365.0" mnemonicParsing="false" onAction="#SupprimerProd" text="Delete" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Gestion Categories">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="490.0" fitWidth="889.0" layoutX="1.0" opacity="0.69" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Desktop/f7028cb334c179e9_6076e3a0de21d62fdf52aff6.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="16.0" layoutY="27.0" text="Gestion Categories">
+                           <font>
+                              <Font name="Arial Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tvCat" layoutX="442.0" layoutY="66.0" onMouseClicked="#affInInputs" prefHeight="278.0" prefWidth="346.0">
+                           <columns>
+                              <TableColumn fx:id="tcIdCat" prefWidth="142.0" text="IdCat" />
+                              <TableColumn fx:id="tcNomCat" prefWidth="203.0" text="NomCat" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="tfIdcat" editable="false" layoutX="152.0" layoutY="164.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="tfNomcat" layoutX="152.0" layoutY="204.0" />
+                        <Label layoutX="29.0" layoutY="206.0" text="Nom Categorie" />
+                        <Label layoutX="79.0" layoutY="168.0" text="Id cat" />
+                        <Button fx:id="btnInsertcat" layoutX="71.0" layoutY="282.0" mnemonicParsing="false" onAction="#ajouterCat" text="Insert" />
+                        <Button fx:id="btnUpdateCat" layoutX="172.0" layoutY="282.0" mnemonicParsing="false" onAction="#modifierCat" text="Update" />
+                        <Button fx:id="btnDeletecat" layoutX="276.0" layoutY="282.0" mnemonicParsing="false" onAction="#supprimerCat" text="Delete" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Gestion Réclamation">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="490.0" fitWidth="889.0" layoutX="1.0" opacity="0.69" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Desktop/f7028cb334c179e9_6076e3a0de21d62fdf52aff6.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="42.0" layoutY="24.0" text="Gestion Reclamation">
+                           <font>
+                              <Font name="Arial Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <TableView id="Reclamation" fx:id="tableview" layoutX="258.0" layoutY="65.0" onMouseClicked="#affInInputsRec" prefHeight="324.0" prefWidth="490.0">
+                           <columns>
+                              <TableColumn fx:id="tcSujet" prefWidth="75.0" text="sujet" />
+                              <TableColumn fx:id="tcContent" prefWidth="192.0" text="content" />
+                              <TableColumn fx:id="tcNom" prefWidth="68.0" text="nom" />
+                              <TableColumn fx:id="tcEmail" prefWidth="73.0" text="email" />
+                              <TableColumn fx:id="tcStatus" prefWidth="81.0" text="statut" />
+                           </columns>
+                        </TableView>
+                        <VBox layoutX="32.0" layoutY="87.0" prefHeight="210.0" prefWidth="51.0" spacing="30.0">
+                           <children>
+                              <Label text="Sujet" />
+                              <Label text="Content" />
+                              <Label text="Nom" />
+                              <Label text="Email" />
+                              <Label text="Statut" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="98.0" layoutY="92.0" prefHeight="200.0" prefWidth="128.0" spacing="12.0">
+                           <children>
+                              <TextField fx:id="tfSujet" editable="false" />
+                              <TextArea fx:id="tfContent" editable="false" prefHeight="200.0" prefWidth="200.0" />
+                              <TextField fx:id="tfNom" editable="false" />
+                              <TextField fx:id="tfEmail" editable="false" />
+                              <TextField fx:id="tfStatut" editable="false" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnDeleterec" layoutX="146.0" layoutY="345.0" mnemonicParsing="false" onAction="#supprimerReclamation" text="Delete" />
+                        <Button fx:id="btnUpdaterec" layoutX="58.0" layoutY="345.0" mnemonicParsing="false" onAction="#modifierReclamation" text="Update" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="14.0" layoutY="4.0" prefHeight="17.0" prefWidth="108.0" text="La gestion">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRetour" layoutX="799.0" layoutY="14.0" mnemonicParsing="false" onAction="#Retour" text="Retour" />
+   </children>
+</AnchorPane>
