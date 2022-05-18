@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Actualités
+{% endblock %}
+{% block body %}
+	<body>
+
+
+		<!-- Review section -->
+		<section class="review-section">
+			<div class="container">
+				<ul class="game-filter">
+					<li>
+						<a href="">A</a>
+					</li>
+					<li>
+						<a href="">B</a>
+					</li>
+					<li>
+						<a href="">C</a>
+					</li>
+					<li>
+						<a href="">D</a>
+					</li>
+					<li>
+						<a href="">E</a>
+					</li>
+					<li>
+						<a href="">F</a>
+					</li>
+					<li>
+						<a href="">G</a>
+					</li>
+					<li>
+						<a href="">H</a>
+					</li>
+					<li>
+						<a href="">I</a>
+					</li>
+					<li>
+						<a href="">J</a>
+					</li>
+					<li>
+						<a href="">K</a>
+					</li>
+					<li>
+						<a href="">L</a>
+					</li>
+					<li>
+						<a href="">M</a>
+					</li>
+					<li>
+						<a href="">N</a>
+					</li>
+					<li>
+						<a href="">O</a>
+					</li>
+					<li>
+						<a href="">P</a>
+					</li>
+					<li>
+						<a href="">Q</a>
+					</li>
+					<li>
+						<a href="">R</a>
+					</li>
+					<li>
+						<a href="">S</a>
+					</li>
+					<li>
+						<a href="">T</a>
+					</li>
+					<li>
+						<a href="">U</a>
+					</li>
+					<li>
+						<a href="">V</a>
+					</li>
+					<li>
+						<a href="">W</a>
+					</li>
+					<li>
+						<a href="">X</a>
+					</li>
+					<li>
+						<a href="">Y</a>
+					</li>
+					<li>
+						<a href="">Z</a>
+					</li>
+				</ul>
+
+				<div class="review-item">
+					<div class="row">
+						{% for actualite in acts %}
+							<div class="col-lg-4">
+								<div class="review-pic">
+									<img src="img/games/{{actualite.image}}" alt="">
+								</div>
+							</div>
+							<div class="col-lg-8">
+								<div class="review-content text-box text-white">
+									<div class="rating">
+										<h5>
+											<i>Rating</i>
+											<span>4.5</span>
+											/ 5</h5>
+										<td class="align-middle">
+											<a href="{{ path('act_modifier',{'id':actualite.id}) }}" , class="btn btn-secondary text-xs" data-toggle="tooltip" data-original-title="Edit user">
+												Modifier
+											</a><br>
+										</td>
+									</br>
+									<a href="{{ path('act_delete',{'id':actualite.id}) }}" class="btn btn-danger  text-xs" data-toggle="tooltip" data-original-title="Edit user">
+										Supprimer
+									</a>
+								</td>
+							</div>
+							<div class="top-meta">11.11.18  /  in
+								<a href="">Games</a>
+							</div>
+							<h3>{{actualite.titre}}</h3>
+							<p>{{actualite.content | raw }}
+							</p>
+							<a href="#" class="read-more">Read More
+								<img src="img/icons/double-arrow.png" alt="#"/></a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+
+		<div class="site-pagination">
+			<a href="#" class="active">01.</a>
+			<a href="#">02.</a>
+			<a href="#">03.</a>
+		</div>
+	</body>
+</div></section><!-- Review section end--></body>{% endblock %}

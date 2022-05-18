@@ -1,100 +1,106 @@
 {% extends 'base.html.twig' %}
-{% block title %}  Tournoi  {% endblock %}
+{% block title %}
+	Tournoi
+{% endblock %}
 
 {% block body %}
-<body>
-	
+	<body>
 
 
+		<section class="review-section">
 
-	
 
-	<section class="review-section">
-
-    
-		
 			<div class="review-item">
-            
+
 				<div class="row">
 					<div class="col-lg-4">
 						<div class="review-pic">
-                        
+
 							<img src="" alt="">
 						</div>
 					</div>
 					<div class="col-lg-8">
-					
-					{% for matchh in matchhs %}
-					
-						<div class="review-content text-box text-white">
-						<tr>
-        <th class="center">Temps restant</th>
-        <td class="center"><span id="demo"></span></td>
-    </tr>
-						<h2><i></i><span>{{matchh.NomTournoi}}</span> </h2>
-							<div class="rating">
-								<h5><i>Date</i><span>{{matchh.DateDebMatch.format('d/m/Y')}}</span> </h5>
-								<h5><i>Heure</i><span>{{matchh.Heure.format('H:i')}}</span> </h5>
-							</div>
-							
-							<div class="top-meta"> <a href="">Dans Match</a></div>
-							<h3>Game {{matchh.id}}</h3>
-							<h5>FPX <br> Cloud 9</h5>
-							<a href="#" class="read-more">Regarder Maintenant ! <img src="img/icons/double-arrow.png" alt="#"/></a>
-							
-	
-						</div>
-						<tr>
-        
-    
-    
-    <script>
-    // Set the date we're counting down to
-   var dm = new Date();
-   dm.setDate({{matchh.DateDebMatch|date('Y/H-I')}}); 
 
-    
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-    
-      // Get todays date and time
-      var now = new Date().getTime();
-    
-      // Find the distance between now an the count down date
-      var distance = (dm - now) ;
-    
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-      // Display the result in the element with id="demo"
-      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-      + minutes + "m " + seconds + "s ";
-    
-      // If the count down is finished, write some text 
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-      }
-    }, 1000);
-    </script>
-						
-						{% endfor %}
+						{% for matchh in matchhs %}
+
+							<div class="review-content text-box text-white">
+								<tr>
+									<th class="center">Temps restant</th>
+									<td class="center">
+										<span id="demo"></span>
+									</td>
+								</tr>
+								<h2>
+									<i></i>
+									<span>{{matchh.NomTournoi}}</span>
+								</h2>
+								<div class="rating">
+									<h5>
+										<i>Date</i>
+										<span>{{matchh.DateDebMatch.format('d/m/Y')}}</span>
+									</h5>
+									<h5>
+										<i>Heure</i>
+										<span>{{matchh.Heure.format('H:i')}}</span>
+									</h5>
+								</div>
+
+								<div class="top-meta">
+									<a href="">Dans Match</a>
+								</div>
+								<h3>Game
+									{{matchh.id}}</h3>
+								<h5>FPX
+									<br>
+									Cloud 9</h5>
+								<a href="#" class="read-more">Regarder Maintenant !
+									<img src="img/icons/double-arrow.png" alt="#"/></a>
+
+
+							</div>
+							<tr>
+
+
+								<script>
+									// Set the date we're counting down to
+var dm = new Date();
+dm.setDate({{ matchh.DateDebMatch|date('Y/H-I') }});
+
+
+// Update the count down every 1 second
+var x = setInterval(function () { // Get todays date and time
+var now = new Date().getTime();
+
+// Find the distance between now an the count down date
+var distance = (dm - now);
+
+// Time calculations for days, hours, minutes and seconds
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+// Display the result in the element with id="demo"
+document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+// If the count down is finished, write some text
+if (distance < 0) {
+clearInterval(x);
+document.getElementById("demo").innerHTML = "EXPIRED";
+}
+}, 1000);
+								</script>
+
+							{% endfor %}
+						</div>
 					</div>
 				</div>
+
 			</div>
-			
-		</div>
-		
-	</section>
-	<!-- Review section end-->
 
-	
+		</section>
+		<!-- Review section end-->
+
+
 	</body>
-    {% endblock %}
-
-	
-
-	
+{% endblock %}

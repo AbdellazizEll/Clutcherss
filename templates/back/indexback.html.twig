@@ -23,7 +23,7 @@
 			<script src="{{asset ('https://kit.fontawesome.com/42d5adcbca.js')}}" crossorigin="anonymous"></script>
 			<!-- Material Icons -->
 			<link
-			href={{asset ('https://fonts.googleapis.com/icon?family=Material+Icons+Round')}} " rel=" stylesheet">
+			href="{{asset ('https://fonts.googleapis.com/icon?family=Material+Icons+Round')}} " rel=" stylesheet">
 			<!-- CSS Files -->
 			<link id="pagestyle" href="{{asset('./assets/css/material-dashboard.css?v=3.0.0')}}" rel="stylesheet"/>
 		{% endblock %}
@@ -51,29 +51,82 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-white " href="{{ path ('') }}">
+							<a class="nav-link text-white " href="{{ path ('liste_users') }}">
 								<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
 									<i class="material-icons opacity-10">table_view</i>
 								</div>
-								<span class="nav-link-text ms-1">Tables</span>
+								<span class="nav-link-text ms-1">Users</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-white " href="{{ path ('billing') }}">
+							<a class="nav-link text-white " href="{{ path ('actualiteback') }}">
 								<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
 									<i class="material-icons opacity-10">receipt_long</i>
 								</div>
-								<span class="nav-link-text ms-1">Billing</span>
+								<span class="nav-link-text ms-1">Actualités</span>
 							</a>
 						</li>
 
 
 						<li class="nav-item">
-							<a class="nav-link text-white " href="{{ path ('notifications') }}">
+							<a class="nav-link text-white " href="{{ path ('newjeu') }}">
 								<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
 									<i class="material-icons opacity-10">notifications</i>
 								</div>
-								<span class="nav-link-text ms-1">Notifications</span>
+								<span class="nav-link-text ms-1">Jeux</span>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text-white " href="{{ path ('tournoi_back') }}">
+								<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="material-icons opacity-10">notifications</i>
+								</div>
+								<span class="nav-link-text ms-1">Tournaments</span>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text-white " href="{{ path ('reclamation') }}">
+								<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="material-icons opacity-10">notifications</i>
+								</div>
+								<span class="nav-link-text ms-1">Réclamations</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white " href="{{ path ('Commandes_show') }}">
+								<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="material-icons opacity-10">notifications</i>
+								</div>
+								<span class="nav-link-text ms-1">Commandes</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white " href="{{ path ('backpost') }}">
+								<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="material-icons opacity-10">notifications</i>
+								</div>
+								<span class="nav-link-text ms-1">Posts</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white " href="{{ path ('backpost') }}">
+								<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="material-icons opacity-10">notifications</i>
+								</div>
+								<span class="nav-link-text ms-1">Posts</span>
+							</a>
+						</li>
+						<li class="nav-item">
+
+
+							<a class="nav-link text-white " href="{{ path ('backcomm') }}">
+								<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="material-icons opacity-10">person</i>
+								</div>
+
+								<span class="nav-link-text ms-1">Commentaires</span>
 							</a>
 						</li>
 						<li class="nav-item mt-3">
@@ -91,6 +144,7 @@
 									<span class="nav-link-text ms-1">Profile</span>
 								</a>
 							</li>
+
 							<li class="nav-item">
 
 
@@ -145,6 +199,7 @@ class="main-content position-relative max-height-vh-100 h-100 border-radius-lg "
 					<li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
 				</ol>
 				<h6 class="font-weight-bolder mb-0">Dashboard</h6>
+
 			</nav>
 			<div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
 				<div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -155,11 +210,18 @@ class="main-content position-relative max-height-vh-100 h-100 border-radius-lg "
 				</div>
 				<ul class="navbar-nav  justify-content-end">
 					<li class="nav-item d-flex align-items-center">
-						<a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-							<i class="fa fa-user me-sm-1"></i>
-							<span class="d-sm-inline d-none">Sign In</span>
+						<a href="{{ path ('index')}}" class="nav-link text-body font-weight-bold px-0">
+							<i class="fa fa-user me-sm-1">
+								FRONTOFFICE</i>
+
 						</a>
 					</li>
+					<!--<li class="nav-item d-flex align-items-center">
+																										<a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+																											<i class="fa fa-user me-sm-1"></i>
+																											<span class="d-sm-inline d-none">Sign In</span>
+																										</a>
+																									</li> !-->
 					<li class="nav-item d-xl-none ps-3 d-flex align-items-center">
 						<a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
 							<div class="sidenav-toggler-inner">
@@ -781,7 +843,7 @@ class="main-content position-relative max-height-vh-100 h-100 border-radius-lg "
 							<script>
 								document.write(new Date().getFullYear())
 							</script>,
-																																																																																																																																																																								                made with
+																																																																																																																																																																																																																																																																																																																																																																																																																						                made with
 							<i class="fa fa-heart"></i>
 							by
 							<a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>

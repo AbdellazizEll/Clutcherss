@@ -14,10 +14,7 @@ class PostType extends AbstractType
         $builder
             ->add('titre')
             ->add('content')
-            ->add('image')
-            ->add('user')
-            
-        ;
+            ->add('image');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

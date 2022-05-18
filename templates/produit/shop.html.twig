@@ -1,0 +1,71 @@
+{% extends 'index.html.twig' %}
+{% block title %}
+	Jeux
+{% endblock %}
+{% block body %}
+	<body>
+
+		<style>
+			.boxtttt {
+
+				transition: 1s;
+
+			}
+			.boxtttt img {
+				display: block;
+				border-radius: 5px;
+			}
+			.boxtttt:hover {
+				transform: scale(1.3);
+				z-index: 2;
+			}
+		</style>
+
+
+		<!-- Games section -->
+
+		<section class="games-section">
+
+			<br><br>
+			<br><br><br><br>
+			<br><br>
+			<div class="container">
+				<div class="row">
+
+					<div class="col-xl-7 col-lg-8 col-md-7">
+						<div class="row">
+							{% for e in Prod %}
+								<div class="col-lg-6 no-padding home-about-left">
+									<div class="boxtttt">
+										<img src="/uploads/{{e.image}}" id="img" alt="Image" style=" width : 500px  ">
+										<br><br>
+										<br><br>
+									</div>
+								</div>
+
+								<div class="col-lg-6 no-padding home-about-right">
+									<h1 style="margin-left:10% ">{{e.nom}}</h1>
+									<a style="margin-left:10%">{{e.description}}
+									</a>
+									<br>
+									<h2 style="margin-left:10%">{{e.prix}}
+										DT</h2>
+									<br>
+								</div>
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!-- Games end-->
+
+
+	</body>
+	<div class="container py-5">
+		<div class="d-flex justify-content-center"></div>
+	</div>
+
+{% endblock %}

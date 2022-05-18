@@ -56,14 +56,15 @@
 									</div>
 								</div>
 							</div>
-							{% if hasError %}
-								<div class="alert alert-danger">Une Erreur est survenue
 
-								</div>
-							{% endif %}
 							<div class="card-body">
+								{% if hasError %}
+									<div class="alert alert-danger">Une Erreur est survenue
 
-								<form {{path ('account_register')}} class="text-start" method="post">
+									</div>
+								{% endif %}
+
+								<form action="{{ path ('account_login')}}" class="text-start" method="post">
 
 
 									{% if app.user %}
@@ -75,7 +76,7 @@
 									{% endif %}
 									<div class="input-group input-group-outline my-3">
 										<label for="_username" class="form-label">Email</label>
-										<input name="_username" type="email" class="form-control" name="_username">
+										<input name="_username" type="email" class="form-control" name="_username" required value="{{username}}">
 									</div>
 									<div class="input-group input-group-outline mb-3">
 										<label for="_password" class="form-label">Password</label>
@@ -86,13 +87,13 @@
 										<label class="form-check-label mb-0 ms-2" for="rememberMe">Remember me</label>
 									</div>
 									<div class="text-center">
-										<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
 
 										<button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign in</button>
 									</div>
 									<p class="mt-4 text-sm text-center">
 										Don't have an account?
-										<a href="../pages/sign-up.html" class="text-primary text-gradient font-weight-bold">Sign up</a>
+										<a href="{{path("account_register")}}" class="text-primary text-gradient font-weight-bold">Sign up</a>
 									</p>
 								</form>
 							</div>
@@ -109,7 +110,7 @@
 								<script>
 									document.write(new Date().getFullYear())
 								</script>,
-																																																																																																																																																	                made with
+																																																																																																																																																																																																									                made with
 								<i class="fa fa-heart" aria-hidden="true"></i>
 								by
 								<a href="https://www.creative-tim.com" class="font-weight-bold text-white" target="_blank">Creative Tim</a>

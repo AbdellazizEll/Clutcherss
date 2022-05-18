@@ -22,13 +22,13 @@ class Tournoi
     /**
      * @ORM\Column(type="string", length=255)
      */
-    
+
     private $nomTournoi;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    
+
     private $jeux;
 
     /**
@@ -99,13 +99,15 @@ class Tournoi
         return $this;
     }
 
-    public function __toString(){
-       
+    public function __toString()
+    {
+
         return $this->nomTournoi;
     }
 
-    public function _toString(){
-       
+    public function _toString()
+    {
+
         return $this->DatedebMatch;
     }
 

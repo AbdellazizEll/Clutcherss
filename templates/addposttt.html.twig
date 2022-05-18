@@ -1,15 +1,17 @@
-{% extends 'indexback.html.twig' %}
+{% extends 'back/indexback.html.twig' %}
 {% block body %}
 
-<h1> Ajouter Post</h1>
+	<h1>
+		Ajouter Post</h1>
 
-{{ form_start(form)}}
+	{{ form_start(form)}}
 
 	{{ form_widget(form)}}
 
-<button type="submit">  Ajouter</button>
+	<button type="submit">
+		Ajouter</button>
 
-{{ form_end(form)}}
+	{{ form_end(form)}}
 
 
 {% endblock %}

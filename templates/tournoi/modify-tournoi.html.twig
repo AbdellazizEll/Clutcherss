@@ -1,19 +1,22 @@
-
-  {% block body %}
-
-<body class="g-sidenav-show  bg-gray-200">
-   {{form_start(form)}}
-   {{form_widget(form)}}
-
-   
-
-   <button type="submit" class="btn btn-success"> 
-        Modifie le tournoi
-   </button> 
-   
-   
-
-   {{form_end(form)}}
-   
+{% extends 'back/indexback.html.twig' %}
+{% block title %}
+	Gestion des Tournois
 {% endblock %}
+{% block body %}
 
+	<body class="g-sidenav-show  bg-gray-200">
+		{{form_start(form)}}
+
+
+		{{form_widget(form)}}
+
+		<button type="submit" class="btn btn-success">
+			Confirmez le tournoi
+		</button>
+
+
+		{{form_end(form)}}
+
+
+	</body>
+{% endblock %}

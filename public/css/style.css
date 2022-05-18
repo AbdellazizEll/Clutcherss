@@ -11,12 +11,70 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+#calendar {
+	width: 200px;
+	margin: 0 auto;
+	font-size: 10px;
+}
+
+.fc-toolbar {
+	font-size: .9em;
+}
+
+.fc-toolbar h2 {
+	font-size: 12px;
+	white-space: normal !important;
+}
+
+/* click +2 more for popup */
+.fc-more-cell a {
+	display: block;
+	width: 85%;
+	margin: 1px auto 0 auto;
+	border-radius: 3px;
+	background: grey;
+	color: transparent;
+	overflow: hidden;
+	height: 4px;
+}
+
+.fc-more-popover {
+	width: 100px;
+}
+
+.fc-view-month .fc-event,
+.fc-view-agendaWeek .fc-event,
+.fc-content {
+	font-size: 0;
+	overflow: hidden;
+	height: 2px;
+}
+
+.fc-view-agendaWeek .fc-event-vert {
+	font-size: 0;
+	overflow: hidden;
+	width: 2px !important;
+}
+
+.fc-agenda-axis {
+	width: 20px !important;
+	font-size: .7em;
+}
+
+.fc-button-content {
+	padding: 0;
+}
+
+
 html,
+
+
+
 body {
 	height: 100%;
 	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	font-smooth: antialiased;
 }
 
 h1,
@@ -183,10 +241,10 @@ ol {
 	height: 100%;
 	left: 9px;
 	top: 10px;
-	background: #b01ba5;
+	background: rgba(30, 215, 228, 0.918);
 	z-index: -2;
-	-webkit-box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.24);
-	box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.24);
+	-webkit-box-shadow: 0 0 9px 3px rgba(30, 215, 228, 0.918);
+	box-shadow: 0 0 9px 3px rgba(30, 215, 228, 0.918);
 }
 
 .site-btn:before {
@@ -229,19 +287,21 @@ ol {
 	0% {
 		-webkit-transform: rotate(0deg);
 		transform: rotate(0deg);
-		border: 4px solid #f44336;
+		border: 4px solid #187a8b;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
 		transform: rotate(180deg);
-		border: 4px solid #673ab7;
+		border: 4px solid #1d1755;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
-		border: 4px solid #f44336;
+		border: 4px solid rgba(30, 215, 228, 0.918);
 		border-left-color: transparent;
 	}
 }
@@ -249,17 +309,19 @@ ol {
 @-webkit-keyframes loader {
 	0% {
 		-webkit-transform: rotate(0deg);
-		border: 4px solid #f44336;
+		border: 4px solid #187a8b;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
-		border: 4px solid #673ab7;
+		border: 4px solid #1d1755;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
-		border: 4px solid #f44336;
+		border: 4px solid rgba(30, 215, 228, 0.918);
 		border-left-color: transparent;
 	}
 }
@@ -318,14 +380,14 @@ ol {
 .header-social a:hover,
 .footer-social a:hover,
 .geme-social-share a:hover {
-	background: #b01ba5;
+	background: rgba(30, 215, 228, 0.918);
 }
 
 .header-bar-warp {
-	background: #081624;
+	background: #000000;
 	padding: 39px 40px 0;
-	-webkit-box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.24);
-	box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.24);
+	-webkit-box-shadow: 0 0 9px 3px rgba(30, 215, 228, 0.918);
+	box-shadow: 0 0 9px 3px rgba(30, 215, 228, 0.918);
 }
 
 .site-logo {
@@ -345,7 +407,7 @@ ol {
 }
 
 .user-panel a:hover {
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 }
 
 .main-menu {
@@ -388,15 +450,15 @@ ol {
 }
 
 .main-menu li a:hover {
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 }
 
 .main-menu li a:hover:after {
-	background-image: url("../img/icons/arrow-down-color.png");
+	background-image: url("../img/icons/arrow-down.png");
 }
 
 .main-menu li a:hover i {
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 }
 
 .main-menu li:hover .sub-menu {
@@ -406,11 +468,11 @@ ol {
 }
 
 .main-menu li:hover>a {
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 }
 
 .main-menu li:hover>a:after {
-	background-image: url("../img/icons/arrow-down-color.png");
+	background-image: url("../img/icons/arrow-down.png");
 }
 
 .main-menu li .sub-menu {
@@ -449,7 +511,7 @@ ol {
 }
 
 .main-menu li .sub-menu li a:hover {
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 }
 
 .slicknav_menu {
@@ -494,8 +556,8 @@ ol {
 }
 
 .hero-slider .owl-dots .owl-dot.active {
-	color: #b01ba5;
-	border: 2px solid #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
+	border: 2px solid rgba(30, 215, 228, 0.918);
 }
 
 .hero-slider .owl-nav {
@@ -512,7 +574,7 @@ ol {
 .hero-item {
 	height: 921px;
 	padding-top: 125px;
-	border-bottom: 2px solid #b01ba5;
+	border-bottom: 2px solid rgba(30, 215, 228, 0.918);
 }
 
 .hero-item h2 {
@@ -584,7 +646,7 @@ ol {
 ---------------------*/
 
 .intro-section {
-	background: #0c062e;
+	background: #000c2c;
 	padding: 115px 0;
 }
 
@@ -595,7 +657,7 @@ ol {
 }
 
 .text-box .top-meta a {
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 }
 
 .text-box h3 {
@@ -628,15 +690,15 @@ ol {
 
 .blog-section {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#501755+0,2d1854+100 */
-	background: #501755;
+	background: #1d1755;
 	/* Old browsers */
 	/* FF3.6-15 */
-	background: -webkit-linear-gradient(45deg, #501755 0%, #2d1854 100%);
+	background: -webkit-linear-gradient(45deg, #1d1755 0%, #187a8b 100%);
 	/* Chrome10-25,Safari5.1-6 */
-	background: -o-linear-gradient(45deg, #501755 0%, #2d1854 100%);
-	background: linear-gradient(45deg, #501755 0%, #2d1854 100%);
+	background: -o-linear-gradient(45deg, #1d1755 0%, #187a8b 100%);
+	background: linear-gradient(45deg, #1d1755 0%, #187a8b 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#501755', endColorstr='#2d1854', GradientType=1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1d1755', endColorstr='#187a8b', GradientType=1);
 	/* IE6-9 fallback on horizontal gradient */
 }
 
@@ -659,7 +721,7 @@ ol {
 	padding: 16px 36px;
 	font-size: 16px;
 	font-weight: 700;
-	background: #6f2b95;
+	background: #000000;
 	line-height: 1.1;
 	margin-right: 7px;
 	-webkit-transition: all 0.3s;
@@ -669,7 +731,7 @@ ol {
 }
 
 .blog-filter li a:hover {
-	background: #b01ba5;
+	background: rgba(30, 215, 228, 0.918);
 }
 
 .blog-item {
@@ -729,7 +791,7 @@ ol {
 }
 
 .trending-widget .tw-text .tw-meta a {
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 }
 
 .trending-widget .tw-text h5 {
@@ -739,7 +801,7 @@ ol {
 }
 
 .categories-widget {
-	background: #34164b;
+	background: #000000;
 	padding: 55px 0 25px;
 }
 
@@ -770,7 +832,7 @@ ol {
 }
 
 .categories-widget ul li a:hover {
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 	background-position: right center;
 }
 
@@ -792,7 +854,7 @@ ol {
 	position: absolute;
 	right: 0;
 	top: 0;
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 	font-weight: 700;
 	font-size: 14px;
 	font-style: italic;
@@ -826,7 +888,7 @@ ol {
 }
 
 .latest-comments .lc-item .tw-text a {
-	color: #b01ba5;
+	color: rgba(30, 215, 228, 0.918);
 }
 
 .latest-comments .lc-item .tw-text span {
@@ -884,10 +946,10 @@ ol {
 	height: 100%;
 	left: -22px;
 	top: 0;
-	border-left: 3px solid #de46d6;
+	border-left: 3px solid #00b8e6;
 	background: #fff;
-	-webkit-box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.5);
-	box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.5);
+	-webkit-box-shadow: 0 0 9px 3px #000c2c;
+	box-shadow: 0 0 9px 3px #000c2c;
 }
 
 /* ----------------
@@ -938,16 +1000,16 @@ ol {
 
 .gradient-bg,
 .newsletter-section {
-	background: #3e0f3d;
+	background: #000000;
 	/* Old browsers */
 	/* FF3.6-15 */
-	background: -webkit-linear-gradient(left, #3e0f3d 0%, #1c0f3b 100%);
+	background: -webkit-linear-gradient(left, #000000 0%, #187a8b 100%);
 	/* Chrome10-25,Safari5.1-6 */
-	background: -webkit-gradient(linear, left top, right top, from(#3e0f3d), to(#1c0f3b));
-	background: -o-linear-gradient(left, #3e0f3d 0%, #1c0f3b 100%);
-	background: linear-gradient(to right, #3e0f3d 0%, #1c0f3b 100%);
+	background: -webkit-gradient(linear, left top, right top, from(#1d1755), to(#187a8b));
+	background: -o-linear-gradient(left, #000000 0%, #187a8b 100%);
+	background: linear-gradient(to right, #000000 0%, #187a8b 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e0f3d', endColorstr='#1c0f3b', GradientType=1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#187a8b', GradientType=1);
 	/* IE6-9 */
 }
 
@@ -993,16 +1055,16 @@ ol {
 .footer-section {
 	text-align: center;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#330d38+0,190d36+100 */
-	background: #330d38;
+	background: #000000;
 	/* Old browsers */
 	/* FF3.6-15 */
-	background: -webkit-linear-gradient(left, #330d38 0%, #190d36 100%);
+	background: -webkit-linear-gradient(left, #00b8e6 0%, #000000 100%);
 	/* Chrome10-25,Safari5.1-6 */
-	background: -webkit-gradient(linear, left top, right top, from(#330d38), to(#190d36));
-	background: -o-linear-gradient(left, #330d38 0%, #190d36 100%);
-	background: linear-gradient(to right, #330d38 0%, #190d36 100%);
+	background: -webkit-gradient(linear, left top, right top, from(#000000), to(#000000));
+	background: -o-linear-gradient(left, #00b8e6 0%, #000000 100%);
+	background: linear-gradient(to right, #000000 0%, #000000 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#330d38', endColorstr='#190d36', GradientType=1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#330d38', endColorstr='#190d36', GradientType=1);
 	/* IE6-9 */
 }
 
@@ -1091,7 +1153,7 @@ ol {
 }
 
 .site-breadcrumb span {
-	color: #c313b7;
+	color: #00b8e6;
 }
 
 /* --------------
@@ -1101,15 +1163,16 @@ ol {
 .games-section {
 	padding: 108px 0;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#501755+0,2d1854+100 */
-	background: #501755;
+	background: #1d1755;
 	/* Old browsers */
 	/* FF3.6-15 */
-	background: -webkit-linear-gradient(45deg, #501755 0%, #2d1854 100%);
+	background: -webkit-linear-gradient(45deg, #1d1755 0%, #187a8b 100%);
 	/* Chrome10-25,Safari5.1-6 */
-	background: -o-linear-gradient(45deg, #501755 0%, #2d1854 100%);
-	background: linear-gradient(45deg, #501755 0%, #2d1854 100%);
+	background: -o-linear-gradient(45deg, #1d1755 0%, #187a8b 100%);
+	background: linear-gradient(45deg, #1d1755 0%, #187a8b 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#501755', endColorstr='#2d1854', GradientType=1);
+
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#501755', endColorstr='#2d1854', GradientType=1);
 	/* IE6-9 fallback on horizontal gradient */
 }
 
@@ -1122,7 +1185,7 @@ ol {
 	display: inline-block;
 	width: 40px;
 	height: 34px;
-	background: #503c6e;
+	background: #1d1755;
 	border-radius: 17px;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
@@ -1130,7 +1193,7 @@ ol {
 }
 
 .game-filter li:hover {
-	background: #c313b7;
+	background: #00b8e6;
 }
 
 .game-filter li a {
@@ -1160,7 +1223,7 @@ ol {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-style: italic;
-	color: #b01ba5;
+	color: #00b8e6;
 }
 
 .game-item .read-more img {
@@ -1200,8 +1263,8 @@ ol {
 .site-pagination a.active {
 	width: 44px;
 	margin: 0 10px;
-	color: #b01ba5;
-	border: 2px solid #b01ba5;
+	color: #00b8e6;
+	border: 2px solid #0b8e65;
 }
 
 .site-pagination a.active:first-child {
@@ -1222,15 +1285,15 @@ ol {
 .contact-page {
 	padding: 104px 0;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#501755+0,2d1854+100 */
-	background: #501755;
+	background: #1d1755;
 	/* Old browsers */
 	/* FF3.6-15 */
-	background: -webkit-linear-gradient(45deg, #501755 0%, #2d1854 100%);
+	background: -webkit-linear-gradient(45deg, #1d1755 0%, #187a8b 100%);
 	/* Chrome10-25,Safari5.1-6 */
-	background: -o-linear-gradient(45deg, #501755 0%, #2d1854 100%);
-	background: linear-gradient(45deg, #501755 0%, #2d1854 100%);
+	background: -o-linear-gradient(45deg, #1d1755 0%, #187a8b 100%);
+	background: linear-gradient(45deg, #1d1755 0%, #187a8b 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#501755', endColorstr='#2d1854', GradientType=1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1d1755', endColorstr='#187a8b', GradientType=1);
 	/* IE6-9 fallback on horizontal gradient */
 }
 
@@ -1240,13 +1303,13 @@ ol {
 
 .game-single-content .gs-meta {
 	font-size: 18px;
-	color: #68647d;
+	color: #1d1755;
 	font-weight: 500;
 	margin-bottom: 20px;
 }
 
 .game-single-content .gs-meta a {
-	color: #b01ba5;
+	color: #00b8e6;
 }
 
 .game-single-content .gs-title {
@@ -1256,7 +1319,7 @@ ol {
 }
 
 .game-single-content h4 {
-	color: #b01ba5;
+	color: #00b8e6;
 	margin-bottom: 20px;
 }
 
@@ -1269,7 +1332,7 @@ ol {
 }
 
 .rating-widget {
-	background: #34164b;
+	background: #00b8e6;
 	padding: 55px 0 30px;
 }
 
@@ -1282,7 +1345,7 @@ ol {
 .rating-widget ul li {
 	display: block;
 	font-size: 16px;
-	color: #b01ba5;
+	color: #00b8e6;
 	font-weight: 500;
 	margin-bottom: 10px;
 }
@@ -1310,11 +1373,11 @@ ol {
 }
 
 .rating-widget h5 span {
-	color: #b01ba5;
+	color: #00b8e6;
 }
 
 .testimonials-widget {
-	background: #34164b;
+	background: #1d1755;
 	padding: 55px 0 50px;
 }
 
@@ -1336,11 +1399,11 @@ ol {
 }
 
 .testimonials-widget .testim-text h6 span {
-	color: #b01ba5;
+	color: #00b8e6;
 }
 
 .game-author-section {
-	background: #3a1854;
+	background: #1d1755;
 	padding: 51px 0;
 	overflow: hidden;
 }
@@ -1364,7 +1427,7 @@ ol {
 }
 
 .game-author-info h4 span {
-	color: #b01ba5;
+	color: #00b8e6;
 }
 
 .game-author-info p {
@@ -1420,7 +1483,7 @@ ol {
 }
 
 .review-content .rating h5 span {
-	color: #c313b7;
+	color: #00b8e6;
 }
 
 /* ------------------
@@ -1537,28 +1600,35 @@ ol {
 	.blog-item .blog-thumb {
 		width: 250px;
 	}
+
 	.hero-item p {
 		font-size: 22px;
 	}
+
 	.hero-slider .owl-nav .owl-next {
 		right: 30px;
 	}
+
 	.hero-slider .owl-dots {
 		width: 930px;
 		left: calc(50% - 465px);
 	}
+
 	.newsletter-form {
 		padding-left: 0;
 	}
+
 	.newsletter-form input {
 		width: 100%;
 		margin-right: 0;
 		margin-bottom: 40px;
 	}
+
 	.game-filter li {
 		width: 31px;
 		height: 31px;
 	}
+
 	.game-filter li a {
 		padding-top: 5px;
 	}
@@ -1570,60 +1640,76 @@ ol {
 	.header-bar-warp {
 		padding: 39px 15px 0;
 	}
+
 	.main-menu li a {
 		margin-right: 10px;
 	}
+
 	.hero-item h2 {
 		font-size: 110px;
 	}
+
 	.hero-item p {
 		font-size: 16px;
 		padding: 0 30px;
 	}
+
 	.hero-slider .owl-nav .owl-next {
 		right: 0;
 	}
+
 	.hero-slider .owl-dots {
 		width: 690px;
 		left: calc(50% - 345px);
 	}
+
 	.blog-item .blog-thumb {
 		float: none;
 		margin-right: 0;
 		width: 100%;
 		margin-bottom: 30px;
 	}
+
 	.featured-bg {
 		display: none;
 	}
+
 	.featured-box {
 		float: none;
 		width: 100%;
 	}
+
 	.newsletter-form input {
 		width: 100%;
 		margin-right: 0;
 		margin-bottom: 40px;
 	}
+
 	.footer-right-pic {
 		right: 15px;
 	}
+
 	.footer-left-pic {
 		left: -44px;
 	}
+
 	.game-filter {
 		text-align: center;
 	}
+
 	.game-filter li {
 		margin-bottom: 5px;
 	}
+
 	.game-single-content .gs-title {
 		font-size: 40px;
 	}
+
 	.review-pic img {
 		min-width: 100%;
 		margin-bottom: 30px;
 	}
+
 	.contact-text {
 		margin-bottom: 50px;
 	}
@@ -1635,100 +1721,126 @@ ol {
 	.header-bar-warp {
 		padding: 25px 20px 10px;
 	}
+
 	.main-menu.primary-menu {
 		display: none;
 	}
+
 	.slicknav_menu {
 		display: block;
 		background: #081624;
 	}
+
 	.slicknav_btn {
 		margin-right: 10px;
 		background: #3a3a3a;
 	}
+
 	.slicknav_nav a:hover,
 	.slicknav_nav .slicknav_row:hover {
 		background: #25394c;
 		color: #fff;
 	}
+
 	.hero-item h2 {
 		font-size: 70px;
 	}
+
 	.hero-item p {
 		font-size: 18px;
 	}
+
 	.footer-right-pic,
 	.footer-left-pic {
 		display: none;
 	}
+
 	.hero-slider .owl-nav .owl-next {
 		top: auto;
 		bottom: 33px;
 		right: 15px;
 		z-index: 99;
 	}
+
 	.hero-slider .owl-dots {
 		width: 100%;
 		left: 0;
 		padding-left: 15px;
 	}
+
 	.intro-text-box {
 		margin-bottom: 40px;
 	}
+
 	.blog-item .blog-thumb {
 		float: none;
 		margin-right: 0;
 		width: 100%;
 		margin-bottom: 30px;
 	}
+
 	.sidebar {
 		padding-top: 60px;
 	}
+
 	.featured-bg {
 		display: none;
 	}
+
 	.featured-box {
 		float: none;
 		width: 100%;
 	}
+
 	.featured-box .text-box h3 {
 		font-size: 45px;
 	}
+
 	.newsletter-form {
 		padding-left: 0;
 	}
+
 	.newsletter-form input {
 		width: 100%;
 		margin-right: 0;
 		margin-bottom: 40px;
 	}
+
 	.video-text:after {
 		left: 0;
 	}
+
 	.page-top-section {
 		height: 400px;
 		padding-top: 250px;
 	}
+
 	.game-filter {
 		text-align: center;
 	}
+
 	.game-filter li {
 		margin-bottom: 5px;
 	}
+
 	.game-single-content .gs-title {
 		font-size: 40px;
 	}
+
 	.review-pic img {
 		min-width: 100%;
 		margin-bottom: 30px;
 	}
+
 	.contact-text {
 		margin-bottom: 50px;
 	}
+
 	.review-content .rating {
 		position: relative;
 		margin-bottom: 20px;
 	}
+
 	.review-content .rating h5 {
 		text-align: left;
 		padding-right: 0;
@@ -1742,25 +1854,32 @@ ol {
 		font-size: 55px;
 		margin-bottom: 20px;
 	}
+
 	.hero-item p {
 		font-size: 15px;
 	}
+
 	.video-text h2 {
 		font-size: 30px;
 	}
+
 	.video-play-btn {
 		top: calc(30% - 61px);
 	}
+
 	.featured-box {
 		padding: 100px 15px;
 	}
+
 	.featured-box .text-box h3,
 	.newsletter-section h2 {
 		font-size: 35px;
 	}
+
 	.main-menu li a {
 		margin-right: 20px;
 	}
+
 	.game-author-pic {
 		float: none;
 		margin-bottom: 20px;

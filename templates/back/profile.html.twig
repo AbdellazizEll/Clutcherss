@@ -1,9 +1,8 @@
-{% extends 'back/indexback.html.twig' %}
 {% block title %}
 	Material Dashboard 2 by Creative Tim
 {% endblock %}
 
-
+{% extends 'back/indexback.html.twig' %}
 {% block body %}
 
 	<body class="g-sidenav-show bg-gray-200">
@@ -64,7 +63,8 @@
 											<div>{{form_row(form.firstName)}}</div>
 											<div>{{form_row(form.lastName)}}</div>
 											<div>{{form_row(form.email)}}</div>
-
+											<div>{{form_row(form.introduction)}}</div>
+											<div>{{form_row(form.description)}}</div>
 											<div>{{form_row(form.picture)}}</div>
 
 										</div>
@@ -251,7 +251,7 @@
 						<script>
 							document.write(new Date().getFullYear())
 						</script>,
-																																																																																																																																				                made with
+																																																																																																																																																												                made with
 						<i class="fa fa-heart"></i>
 						by
 						<a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>

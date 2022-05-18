@@ -3,12 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\AdminType;
+use App\Form\AccountType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AdminController extends AbstractController
 {
@@ -21,11 +26,12 @@ class AdminController extends AbstractController
         $error = $utils->getLastAuthenticationError();
         $username = $utils->getLastUsername();
 
-        return $this->render('back/sign-in.html.twig', [
+        return $this->render('login.html.twig', [
             'hasError' => $error !== null,
             'username' => $username
         ]);
     }
+
 
     /**
      * Permet de se déconnecter
@@ -39,12 +45,36 @@ class AdminController extends AbstractController
         // ...
     }
     /**
-     * @Route("/admin/login", name="admin_account_login")
+     * 
+     * @Route("/admin/register", name="admin_account_register")
+     * 
+     * 
+     * @return Response
      */
-    public function loginAdmin()
+    public function register(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {
-        return $this->render('back/sign-in.html.twig');
+        $user = new User();
+        $form = $this->createForm(AdminType::class, $user);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $hash = $encoder->encodePassword($user, $user->getPassword());
+
+            $user->setPassword($hash);
+            $manager->persist($user);
+            $manager->flush();
+            $this->addFlash(
+
+                'success',
+                "Votre compte a bien été crée ! Vous pouvez maintenant vous connecter !"
+            );
+        }
+
+        return $this->render('admin/register.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
+
 
 
     /**
@@ -99,12 +129,36 @@ class AdminController extends AbstractController
         return $this->render('back/sign-up.html.twig');
     }
 
+
     /**
-     * @Route("/profile", name="profile")
+     * Permet d'afficher et de traiter le formulaire de modification de profil
+     *
+     * @Route("/user/profile", name="admin_account_profile")
+     * 
+     * @return Response
      */
-    public function profile(): Response
+    public function profile(Request $request, EntityManagerInterface $manager)
     {
-        return $this->render('back/profile.html.twig');
+        $user = $this->getUser();
+
+        $form = $this->createForm(AccountType::class, $user);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($user);
+            $manager->flush();
+
+            $this->addFlash(
+                'success',
+                "Les données du profil ont été enregistrée avec succès !"
+            );
+        }
+
+
+        return $this->render('admin/profile.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
     /**
      * Permet de supprimer une annonce

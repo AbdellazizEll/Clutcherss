@@ -36,11 +36,7 @@ class Post
      */
     private $image;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $user;
+
 
     /**
      * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="post", orphanRemoval=true)
@@ -52,10 +48,20 @@ class Post
      */
     private $createdAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="user")
+     * @ORM\JoinColumn()
+     */
+    private $user;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
     }
+
+
+
+
 
     public function getId(): ?int
     {
@@ -98,17 +104,7 @@ class Post
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
 
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Commentaire[]
@@ -152,12 +148,23 @@ class Post
         return $this;
     }
 
-    
 
-    public function __toString(){
-       
+
+    public function __toString()
+    {
+
         return $this->titre;
-        
     }
 
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
 }

@@ -1,0 +1,96 @@
+{% extends 'back/indexback.html.twig' %}
+{% block title %}
+	tournoi
+{% endblock %}
+
+
+{% block body %}
+	<button class="btn btn-success" type="button">
+		<a href="{{path('tournoi_register')}}">
+			Ajouter un tournoi
+		</a>
+	</button>
+	<body class="g-sidenav-show  bg-gray-200">
+
+		<div class="container-fluid py-4">
+			<div class="row">
+				<div class="col-12">
+					<div class="card my-4">
+						<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+							<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+								<h6 class="text-white text-capitalize ps-3">Gestion Des Tournois</h6>
+							</div>
+						</div>
+						<div class="card-body px-0 pb-2">
+							<div class="table-responsive p-0">
+								<table class="table align-items-center mb-0">
+									<thead>
+										<tr>
+											<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NomTournoi</th>
+											<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jeu</th>
+											<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">DateDeb</th>
+											<th class="text-uppercase text-secondary text-xxs font-weight-bolder  opacity-7 ps-2">DateFin</th>
+											<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Modification</th>
+											<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Suppression</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% for tour in tournoi %}
+											<tr>
+												<td>
+													<div class="d-flex px-2 py-1">
+
+														<div class="d-flex flex-column justify-content-center">
+															<h6 class="mb-0 text-sm">{{tour.nomTournoi}}</h6>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="d-flex flex-column justify-content-center">
+														<h6 class="mb-0 text-sm">{{tour.jeux}}</h6>
+													</td>
+												</td>
+												<td>
+													<div class="d-flex flex-column justify-content-center">
+														<h6 class="mb-0 text-sm">{{tour.DateDebut.format('d/m/Y')}}</h6>
+													</td>
+												</td>
+												<td>
+													<div class="d-flex flex-column justify-content-center">
+														<h6 class="mb-0 text-sm">{{tour.DateFin.format('d/m/Y')}}</h6>
+													</td>
+
+													<div class="card-body p-3">
+														<div class="row">
+															<td class="align-middle">
+
+																<button class="btn btn-warning" type="button" data-target="warningToast">
+																	<a href="{{path('modify_tournoi', {'id': tour.id})}}">
+																		Modifier le tournoi
+																	</a>
+																</button>
+															</td>
+															<td class="align-middle">
+																<button class="btn btn-danger" type="button" data-target="dangerToast">
+																	<a href="{{path('delete_tournoi', {'id': tour.id})}}">
+																		Supprimer le tournoi
+																	</a>
+																</button>
+															</td>
+
+														</div>
+													</div>
+												</td>
+											</tr>
+										{% endfor %}
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</body>
+		{% endblock %}

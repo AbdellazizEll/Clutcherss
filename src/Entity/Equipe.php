@@ -22,7 +22,7 @@ class Equipe
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
      */
-    
+
     private $nomEquipe;
 
     /**
@@ -33,34 +33,34 @@ class Equipe
     /**
      * @ORM\Column(type="string", length=255)
      */
-    
+
     private $Logo;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    
+
     private $League;
 
     /**
      * @ORM\Column(type="string", length=255)
      * * @Assert\NotBlank
      */
-    
+
     private $Pays;
 
     /**
      * @ORM\Column(type="string", length=255)
      * * @Assert\NotBlank
      */
-   
+
     private $Description;
 
     /**
      * @ORM\Column(type="string", length=255)
      * * @Assert\NotBlank
      */
-    
+
     private $SiteWeb;
 
     /**

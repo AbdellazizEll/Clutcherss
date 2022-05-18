@@ -23,6 +23,21 @@ class AccountController extends AbstractController
 {
 
     /**
+     * @Route("/login", name="account_login")
+     * 
+     */
+    public function login(AuthenticationUtils $utils)
+    {
+        $error = $utils->getLastAuthenticationError();
+        $username = $utils->getLastUsername();
+
+        return $this->render('login.html.twig', [
+            'hasError' => $error !== null,
+            'username' => $username
+        ]);
+    }
+
+    /**
      * Permet d'afficher et de traiter le formulaire de modification de profil
      *
      * @Route("/account/profile", name="account_profile")
@@ -48,7 +63,7 @@ class AccountController extends AbstractController
         }
 
 
-        return $this->render('back/profile.html.twig', [
+        return $this->render('account/profile.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -65,6 +80,7 @@ class AccountController extends AbstractController
             'users' => $user
         ]);
     }
+
 
 
 
@@ -119,7 +135,7 @@ class AccountController extends AbstractController
                 $newPassword = $passwordUpdate->getNewPassword();
                 $password = $encoder->encodePassword($user, $newPassword);
 
-                $user->setPassword($password);
+                $user->getPassword($password);
 
                 $manager->persist($user);
                 $manager->flush();

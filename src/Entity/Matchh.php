@@ -92,14 +92,15 @@ class Matchh
         return $this;
     }
 
-    public function __toString(){
-       
+    public function __toString()
+    {
+
         return $this->NomTournoi;
     }
 
-    public function _toString(){
-       
+    public function _toString()
+    {
+
         return $this->DatedebMatch;
     }
-    
 }

@@ -1,60 +1,60 @@
 {% extends 'base.html.twig' %}
-{% block title %}  Forum  {% endblock %}
+{% block title %}
+	Forum
+{% endblock %}
 {% block body %}
-<body>
+	<body>
 
 
-	<!-- Blog page -->
-	<section class="blog-page">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-9 col-lg-8 col-md-7">
-					
-					<div class="big-blog-item">
-						<img src="img/blog-big/forum.png" alt="#" class="blog-thumbnail">
-						
-					</div>
-					<div class="big-blog-item">
-					
-					</div>
-					<div class="container">
-  <div class="row">
-    <div class="col-12">
-                  
-                    <div class="modal-header d-flex align-items-center bg-primary text-white">
-                        <h6 class="modal-title mb-0" id="threadModalLabel">New Discussion</h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>       
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                        {{ form_start(form)}}
-                        	{{ form_widget(form)}}
-                           
-                            <div class="modal-footer">
-                        <button type="button"  style="width:20%;" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                        <button type="submit" style="width:20%;" class="btn btn-light">Post</button>
-                    </div>
-                        {{ form_end(form)}}
-                          
-                
-  </div>
-</div>
-					
-					
-			
-	</section>
-	<!-- Blog page end-->
-<script>
-// Reply box popup JS
-$(document).ready(function(){
-  $(".reply-popup").click(function(){
-    $(".reply-box").toggle();
-  });
+		<!-- Blog page -->
+		<section class="blog-page">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-9 col-lg-8 col-md-7">
+
+						<div class="big-blog-item">
+							<img src="img/blog-big/forum.png" alt="#" class="blog-thumbnail">
+
+						</div>
+						<div class="big-blog-item"></div>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+
+									<div class="modal-header d-flex align-items-center bg-primary text-white">
+										<h6 class="modal-title mb-0" id="threadModalLabel">New Discussion</h6>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">×</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											{{ form_start(form, { 'attr' =>['autocomplete' => 'disabled']})  }}
+
+											{{ form_widget(form)}}
+
+											<div class="modal-footer">
+												<button type="button" style="width:20%;" class="btn btn-light" data-dismiss="modal">Cancel</button>
+												<button type="submit" style="width:20%;" class="btn btn-light">Post</button>
+											</div>
+											{{ form_end(form)}}
+
+
+										</div>
+									</div>
+
+
+								</section>
+								<!-- Blog page end-->
+								<script>
+									// Reply box popup JS
+$(document).ready(function () {
+$(".reply-popup").click(function () {
+$(".reply-box").toggle();
 });
-</script>
+});
+								</script>
 
-	
-	</body>
-    {% endblock %}
+
+							</body>
+						{% endblock %}

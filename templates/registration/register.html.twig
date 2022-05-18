@@ -18,8 +18,9 @@
         }) }}
 
 	{{ form_row(registrationForm.passwordConfirm) }}
+	{{ form_row(registrationForm.picture)}}
+
 	{{ form_row(registrationForm.captcha)}}
-	{{ form_row(registrationForm.agreeTerms) }}
 
 	<button type="submit" class="btn">Register</button>
 	{{ form_end(registrationForm) }}

@@ -1,142 +1,172 @@
-{% extends 'base.html.twig' %}
-{% block title %}  Forum  {% endblock %}
+{% extends 'back/base.html.twig' %}
+{% block title %}
+	Forum
+{% endblock %}
 {% block body %}
-<body>
+	<body>
 
 
-	<!-- Blog page -->
-	<section class="blog-page">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-9 col-lg-8 col-md-7">
-					
-					<div class="big-blog-item">
-						<img src="img/blog-big/forum.png" alt="#" class="blog-thumbnail">
-						
-					</div>
-					<div class="big-blog-item">
-					
-					</div>
-					<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="comments">
-       
-       
-       
-        <div class="comment-box">
-		 {% for post in posts %}
-          <span class="commenter-pic">
-            <img src="/images/user-icon.jpg" class="img-fluid">
-          </span>
-          <span class="commenter-name">
-            <a href="#">{{post.user}}</a> <span class="comment-time">{{post.createdAt}}</span>
-          </span>       
-          <p class="comment-txt more">{{post.content}}</p>
-		   <p class="comment-txt more">{{post.image}}</p>
-          <div class="comment-meta">
-            <button class="comment-like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> </button>
-            <button class="comment-dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> </button> 
-            <button class="comment-reply"><i class="fa fa-reply-all" aria-hidden="true"></i> Comment</button>         
-          </div>
-          <div class="comment-box replied">
-		 {% for comm in comms %}
-            <span class="commenter-pic">
-              <img src="/images/user-icon.jpg" class="img-fluid">
-            </span>
-            <span class="commenter-name">
-              <a href="#">{{comm.user}}</a> <span class="comment-time">{{comm.createdAt}}</span>
-            </span>       
-            <p class="comment-txt more">{{comm.content}}</p>
-			<p class="comment-txt more">{{comm.image}}</p>
-            <div class="comment-meta">
-              <button class="comment-like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
-              <button class="comment-dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>        
-            </div>
-           {% endfor %}
-          </div>
-        </div>
-      </div>
-	   {% endfor %}
-    </div>
-  </div>
-</div>
-</div>
+		<!-- Blog page -->
+		<section class="blog-page">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-9 col-lg-8 col-md-7">
 
-				<div class="col-xl-3 col-lg-4 col-md-5 sidebar">
-					<div id="stickySidebar">
-						<div class="widget-item">
-							<form class="search-widget">
-								<input type="text">
-								<button>search</button>
-							</form>
+						<div class="big-blog-item">
+							<img src="img/blog-big/forum.png" alt="#" class="blog-thumbnail">
+
 						</div>
-						<div class="widget-item">
-							<h4 class="widget-title">Trending</h4>
-							<div class="trending-widget">
-								<div class="tw-item">
-									<div class="tw-thumb">
-										<img src="./img/blog-widget/1.jpg" alt="#">
-									</div>
-									<div class="tw-text">
-										<div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
-										<h5>The best online game is out now!</h5>
-									</div>
-								</div>
-								<div class="tw-item">
-									<div class="tw-thumb">
-										<img src="./img/blog-widget/2.jpg" alt="#">
-									</div>
-									<div class="tw-text">
-										<div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
-										<h5>The best online game is out now!</h5>
-									</div>
-								</div>
-								
-								
-							</div>
-						</div>
-						
+						<div class="big-blog-item"></div>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<div class="comments">
 
-						<div class="widget-item">
-							<h4 class="widget-title">Latest Comments</h4>
-							<div class="latest-comments">
-								<div class="lc-item">
-									<img src="./img/blog-widget/1.jpg" class="lc-avatar" alt="#">
-									<div class="tw-text"><a href="">Maria Smith</a> <span>On</span> The best online game out there </div>
-								</div>
-								<div class="lc-item">
-									<img src="./img/blog-widget/2.jpg" class="lc-avatar" alt="#">
-									<div class="tw-text"><a href="">Maria Smith</a> <span>On</span> The best online game out there </div>
-								</div>
-								<div class="lc-item">
-									<img src="./img/blog-widget/3.jpg" class="lc-avatar" alt="#">
-									<div class="tw-text"><a href="">Maria Smith</a> <span>On</span> The best online game out there </div>
-								</div>
-								<div class="lc-item">
-									<img src="./img/blog-widget/4.jpg" class="lc-avatar" alt="#">
-									<div class="tw-text"><a href="">Maria Smith</a> <span>On</span> The best online game out there </div>
+
+										<div class="comment-box">
+											{% for post in posts %}
+												<span class="commenter-pic">
+													<img src="/images/user-icon.jpg" class="img-fluid">
+												</span>
+												<span class="commenter-name">
+													<a href="#">{{post.user}}</a>
+													<span class="comment-time">{{post.createdAt}}</span>
+												</span>
+												<p class="comment-txt more">{{post.content}}</p>
+												<p class="comment-txt more">{{post.image}}</p>
+												<div class="comment-meta">
+													<button class="comment-like">
+														<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+													</button>
+													<button class="comment-dislike">
+														<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+													</button>
+													<button class="comment-reply">
+														<i class="fa fa-reply-all" aria-hidden="true"></i>
+														Comment</button>
+												</div>
+												<div class="comment-box replied">
+													{% for comm in comms %}
+														<span class="commenter-pic">
+															<img src="/images/user-icon.jpg" class="img-fluid">
+														</span>
+														<span class="commenter-name">
+															<a href="#">{{comm.user}}</a>
+															<span class="comment-time">{{comm.createdAt}}</span>
+														</span>
+														<p class="comment-txt more">{{comm.content}}</p>
+														<p class="comment-txt more">{{comm.image}}</p>
+														<div class="comment-meta">
+															<button class="comment-like">
+																<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+															</button>
+															<button class="comment-dislike">
+																<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+															</button>
+														</div>
+													{% endfor %}
+												</div>
+											</div>
+										</div>
+									{% endfor %}
 								</div>
 							</div>
 						</div>
-						
+					</div>
 
+					<div class="col-xl-3 col-lg-4 col-md-5 sidebar">
+						<div id="stickySidebar">
+							<div class="widget-item">
+								<form class="search-widget">
+									<input type="text">
+									<button>search</button>
+								</form>
+							</div>
+							<div class="widget-item">
+								<h4 class="widget-title">Trending</h4>
+								<div class="trending-widget">
+									<div class="tw-item">
+										<div class="tw-thumb">
+											<img src="./img/blog-widget/1.jpg" alt="#">
+										</div>
+										<div class="tw-text">
+											<div class="tw-meta">11.11.18  /  in
+												<a href="">Games</a>
+											</div>
+											<h5>The best online game is out now!</h5>
+										</div>
+									</div>
+									<div class="tw-item">
+										<div class="tw-thumb">
+											<img src="./img/blog-widget/2.jpg" alt="#">
+										</div>
+										<div class="tw-text">
+											<div class="tw-meta">11.11.18  /  in
+												<a href="">Games</a>
+											</div>
+											<h5>The best online game is out now!</h5>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+
+
+							<div class="widget-item">
+								<h4 class="widget-title">Latest Comments</h4>
+								<div class="latest-comments">
+									<div class="lc-item">
+										<img src="./img/blog-widget/1.jpg" class="lc-avatar" alt="#">
+										<div class="tw-text">
+											<a href="">Maria Smith</a>
+											<span>On</span>
+											The best online game out there
+										</div>
+									</div>
+									<div class="lc-item">
+										<img src="./img/blog-widget/2.jpg" class="lc-avatar" alt="#">
+										<div class="tw-text">
+											<a href="">Maria Smith</a>
+											<span>On</span>
+											The best online game out there
+										</div>
+									</div>
+									<div class="lc-item">
+										<img src="./img/blog-widget/3.jpg" class="lc-avatar" alt="#">
+										<div class="tw-text">
+											<a href="">Maria Smith</a>
+											<span>On</span>
+											The best online game out there
+										</div>
+									</div>
+									<div class="lc-item">
+										<img src="./img/blog-widget/4.jpg" class="lc-avatar" alt="#">
+										<div class="tw-text">
+											<a href="">Maria Smith</a>
+											<span>On</span>
+											The best online game out there
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- Blog page end-->
-<script>
-// Reply box popup JS
-$(document).ready(function(){
-  $(".reply-popup").click(function(){
-    $(".reply-box").toggle();
-  });
+		</section>
+		<!-- Blog page end-->
+		<script>
+			// Reply box popup JS
+$(document).ready(function () {
+$(".reply-popup").click(function () {
+$(".reply-box").toggle();
 });
-</script>
+});
+		</script>
 
-	
+
 	</body>
-    {% endblock %}
-
+{% endblock %}
